@@ -21,14 +21,18 @@ $ npm install actionpay-api
 ```js
 "use strict";
 
-let Actionpay = require("actionpay-api"),
-    actionpay = new Actionpay("api key");
+let Actionpay = require("./index.js"),
+    actionpay = new Actionpay("api key", "source id");
     
 actionpay.programs(function(err, result){
     console.log(result);
 });
     
 actionpay.report("2016-10-01", "2016-11-18", function(err, result){
+    console.log(result);
+});
+
+actionpay.reportdetails("2016-10-01", "2016-11-18", function(err, result){
     console.log(result);
 });
     
