@@ -68,7 +68,7 @@ module.exports = function(token, source){
          */
         reportdetails: function(datestart, dateend, cb){
             this.getinapi("https://api.actionpay.net/en/apiWmStats/?key=" + token + "&from=" + datestart + "&till=" + dateend + "&source=" + source, cb);
-        }
+        },
         
         /**
          * Create tracking links
