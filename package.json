@@ -1,6 +1,6 @@
 {
     "name": "actionpay-api",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "API integration with Actionpay",
     "author": "André Ferreira <andrehrf@gmail.com>",
     "main": "index.js",

@@ -1,9 +1,16 @@
+/**
+ * Actionpay API for Node.js
+ * 
+ * @author André Ferreira <andrehrf@gmail.com>
+ * @see API Key - https://api.actionpay.ru/
+ */
+
 "use strict";
 
 const url = require("url"),
       request = require("request");
 
-module.exports = function(token){
+module.exports = function(token, source){
     return {
         /**
          * Function to generate the API request
@@ -18,22 +25,6 @@ module.exports = function(token){
                 
                 cb(error, body); 
             });
-        },
-        
-        /**
-         * Function to generate application link
-         *
-         * @see http://stackoverflow.com/questions/22678346/convert-javascript-object-to-url-parameters
-         * @param string URLbase
-         * @param object params
-         * @return string
-         */
-        createurl: function(URLbase, params) {
-            let paramsStr = Object.keys(params).map(function(k) {
-                return encodeURIComponent(k) + "=" + encodeURIComponent(params[k]);
-            }).join('&');
-
-            return URLbase + ((URLbase.indexOf("?") >= 0) ? "" : "?") + paramsStr;
         },
         
         /**
@@ -54,30 +45,30 @@ module.exports = function(token){
          * @param function cb
          */
         programs: function(cb) {
-            this.getinapi("http://actionpay.ru/ru/apiWmMyOffers/?key="+token+"&format=json&active=1", cb);
+            this.getinapi("http://actionpay.net/en/apiWmMyOffers/?key=" + token + "&source=" + source + "&format=json&active=1", cb);
         },
-        
-        /**
-         * Get coupons, including their tracking links
-         * 
-         * @param function cb
-         */
-        /*coupons: function(cb){            
-            this.getinapi("http://actionpay.ru/ru/apiWmNotices/?key=KEY&format=xml&page=2", function(err, result){
                 
-            });
-        },*/
-        
         /**
-         * Returns basic statistics of clicks, views, leads and sales
+         * Returns basic statistics of clicks, views, leads and sales by date
          * 
          * @param string datestart Query start date in AAAA-MM-DD format
          * @param string dateend Query end date in AAAA-MM-DD format
          * @param function cb
          */
         report: function(datestart, dateend, cb){
-            this.getinapi("http://actionpay.net/ru/apiWmStats/?key="+token+"&from="+datestart+"&till="+dateend+"&group=date", cb);
+            this.getinapi("http://actionpay.net/en/apiWmStats/?key=" + token + "&from=" + datestart + "&till=" + dateend + "&source=" + source + "&group=date", cb);
         },
+        
+        /**
+         * Return full statics of clicks, views, leads and sales by date without grouping
+         * 
+         * @param string datestart Query start date in AAAA-MM-DD format
+         * @param string dateend Query end date in AAAA-MM-DD format
+         * @param function cb
+         */
+        reportdetails: function(datestart, dateend, cb){
+            this.getinapi("https://api.actionpay.net/en/apiWmStats/?key=" + token + "&from=" + datestart + "&till=" + dateend + "&source=" + source, cb);
+        }
         
         /**
          * Create tracking links
@@ -89,7 +80,7 @@ module.exports = function(token){
         deeplink: function(url, offerid, cb){
             var _this = this;
             
-            request("http://actionpay.net/ru/apiWmLinks/?key=" + token + "&format=json&offer=" + offerid, (error, response, body) => { 
+            request("http://actionpay.net/en/apiWmLinks/?key=" + token + "&format=json&source=" + source + "&offer=" + offerid, (error, response, body) => { 
                 if(error){
                     cb(error, null);
                 }
