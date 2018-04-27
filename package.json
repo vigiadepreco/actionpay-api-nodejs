@@ -1,18 +1,19 @@
 {
     "name": "actionpay-api",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "description": "API integration with Actionpay",
     "author": "André Ferreira <andrehrf@gmail.com>",
     "main": "index.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/itsimpleapp/actionpay-api-nodejs"
+        "url": "https://github.com/vigiadepreco/actionpay-api-nodejs"
     },
     "bugs": {
-        "url": "https://github.com/itsimpleapp/actionpay-api-nodejs/issues"
+        "url": "https://github.com/vigiadepreco/actionpay-api-nodejs/issues"
     },
-    "homepage": "https://github.com/itsimpleapp/actionpay-api-nodejs",
+    "homepage": "https://github.com/vigiadepreco/actionpay-api-nodejs",
     "dependencies": {
-        "request": "^2.72.0"
+        "request": "^2.72.0",
+        "xml-jsonify": "^1.0.6"
     }
 }
