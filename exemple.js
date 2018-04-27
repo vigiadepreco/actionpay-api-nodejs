@@ -11,19 +11,23 @@ let Actionpay = require("./index.js"),
     actionpay = new Actionpay("API Key", "Source ID"),
     fs = require("fs");
 
-/*actionpay.programs(function(err, result){
-    fs.writeFileSync("./stores.json", JSON.stringify(result));
-});
-
-actionpay.coupons("<ID>", function(err, result){
+/*actionpay.programs((err, result) => {
     console.log(result);
 });
 
-actionpay.report("2016-10-01", "2016-11-18", function(err, result){
+actionpay.notices((err, result) =>{
     console.log(result);
 });
 
-actionpay.reportdetails("2016-10-01", "2016-11-18", function(err, result){
+actionpay.coupons("<ID>", (err, result) => {
+    console.log(result);
+});
+
+actionpay.report("2016-10-01", "2016-11-18", (err, result) =>{
+    console.log(result);
+});
+
+actionpay.reportdetails("2016-10-01", "2016-11-18", (err, result) => {
     console.log(result);
 });
 
