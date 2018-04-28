@@ -1,6 +1,6 @@
 {
     "name": "actionpay-api",
-    "version": "0.1.8",
+    "version": "0.2.0",
     "description": "API integration with Actionpay",
     "author": "André Ferreira <andrehrf@gmail.com>",
     "main": "index.js",
@@ -11,6 +11,10 @@
     "bugs": {
         "url": "https://github.com/vigiadepreco/actionpay-api-nodejs/issues"
     },
+    "keywords": [
+        "api",
+        "actionpay"
+    ],
     "homepage": "https://github.com/vigiadepreco/actionpay-api-nodejs",
     "dependencies": {
         "request": "^2.72.0",
