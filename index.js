@@ -95,7 +95,8 @@ module.exports = function(token, source){
          * @param function cb
          */
         reportdetails: function(datestart, dateend, group, cb){
-            this.getinapi("https://api.actionpay.net/pt-br/apiWmStats/?key=" + token + "&from=" + datestart + "&till=" + dateend + "&source=" + source + "&group=" + group, cb);
+            group = (group) ? "&group=" + group : "";
+            this.getinapi("https://api.actionpay.net/pt-br/apiWmStats/?key=" + token + "&from=" + datestart + "&till=" + dateend + "&source=" + source + group, cb);
         },
 
         /**

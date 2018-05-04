@@ -8,7 +8,7 @@
 "use strict";
 
 let Actionpay = require("./index.js"),
-    actionpay = new Actionpay("l3dALEoEGhdzZxAm", "137793"),
+    actionpay = new Actionpay("api key", "source id"),
     fs = require("fs");
 
 /*actionpay.programs((err, result) => {
@@ -21,13 +21,13 @@ actionpay.notices((err, result) =>{
 
 actionpay.coupons("<ID>", (err, result) => {
     console.log(result);
-});*/
+});
 
-/*actionpay.report("2018-04-01", "2018-04-02", (err, result) =>{
+actionpay.report("2018-04-01", "2018-04-02", (err, result) =>{
     console.log(JSON.stringify(result));
-});*/
+});
 
-actionpay.reportdetails("2018-04-01", "2018-04-02", "date", (err, result) => {
+actionpay.reportdetails("2018-04-01", "2018-04-02", "", (err, result) => {
     console.log(JSON.stringify(result));
 });
 
