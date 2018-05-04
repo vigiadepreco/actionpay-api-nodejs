@@ -8,7 +8,7 @@
 "use strict";
 
 let Actionpay = require("./index.js"),
-    actionpay = new Actionpay("API Key", "Source ID"),
+    actionpay = new Actionpay("l3dALEoEGhdzZxAm", "137793"),
     fs = require("fs");
 
 /*actionpay.programs((err, result) => {
@@ -21,16 +21,16 @@ actionpay.notices((err, result) =>{
 
 actionpay.coupons("<ID>", (err, result) => {
     console.log(result);
+});*/
+
+/*actionpay.report("2018-04-01", "2018-04-02", (err, result) =>{
+    console.log(JSON.stringify(result));
+});*/
+
+actionpay.reportdetails("2018-04-01", "2018-04-02", "date", (err, result) => {
+    console.log(JSON.stringify(result));
 });
 
-actionpay.report("2016-10-01", "2016-11-18", (err, result) =>{
-    console.log(result);
-});
-
-actionpay.reportdetails("2016-10-01", "2016-11-18", (err, result) => {
-    console.log(result);
-});
-
-actionpay.deeplink("http://www.anita.com.br/", 5784, (err, url) => {
+/*actionpay.deeplink("http://www.anita.com.br/", 5784, (err, url) => {
     console.log(url);//http://apycomm.com/click/576852488b30a8ec7c8b4568/137793/subaccount/url=http%3A%2F%2Fwww.anita.com.br%2F
 });*/

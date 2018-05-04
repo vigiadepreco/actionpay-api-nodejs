@@ -91,10 +91,11 @@ module.exports = function(token, source){
          *
          * @param string datestart Query start date in AAAA-MM-DD format
          * @param string dateend Query end date in AAAA-MM-DD format
+         * @param string group Group by date, offer, source, landing, subId1, subaccount
          * @param function cb
          */
-        reportdetails: function(datestart, dateend, cb){
-            this.getinapi("https://api.actionpay.net/pt-br/apiWmStats/?key=" + token + "&from=" + datestart + "&till=" + dateend + "&source=" + source, cb);
+        reportdetails: function(datestart, dateend, group, cb){
+            this.getinapi("https://api.actionpay.net/pt-br/apiWmStats/?key=" + token + "&from=" + datestart + "&till=" + dateend + "&source=" + source + "&group=" + group, cb);
         },
 
         /**

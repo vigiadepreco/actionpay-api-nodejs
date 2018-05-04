@@ -39,7 +39,7 @@ actionpay.report("2016-10-01", "2016-11-18", (err, result) =>{
     console.log(result);
 });
 
-actionpay.reportdetails("2016-10-01", "2016-11-18", (err, result) => {
+actionpay.reportdetails("2016-10-01", "2016-11-18", "date", (err, result) => {
     console.log(result);
 });
 
