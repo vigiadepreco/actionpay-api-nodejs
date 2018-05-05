@@ -27,7 +27,7 @@ actionpay.report("2018-04-01", "2018-04-02", (err, result) =>{
     console.log(JSON.stringify(result));
 });
 
-actionpay.reportdetails("2018-04-01", "2018-04-02", "", (err, result) => {
+actionpay.reportdetails("2018-04-01", "2018-04-02", "", 1, (err, result) => {
     console.log(JSON.stringify(result));
 });
 
